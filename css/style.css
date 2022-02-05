@@ -8,6 +8,10 @@ body {
   background-color: #4771fc;
 }
 
+.hide {
+  opacity: 0;
+}
+
 .container {
   position: relative;
   display: flex;
@@ -20,7 +24,6 @@ body {
   background-color: white;
   border-radius: 3px;
   border: 1px solid white;
-  box-shadow: 1px 4px 8px #8d8deb, 4px 1px 8px #8d8deb, 1px 4px 8px #8d8deb, 4px 1px 8px #8d8deb;
 }
 .container .search {
   width: 70px;
@@ -31,11 +34,10 @@ body {
   border-style: none;
   background-color: #e2e7e7;
   border-radius: 2px;
-  box-shadow: 1px 4px 4px #f0f0f0, 4px 1px 4px #f0f0f0, 1px 4px 4px #f0f0f0, 4px 1px 4px #f0f0f0;
 }
 .container .search:hover {
   cursor: pointer;
-  background-color: #f5efef;
+  background-color: #f7f7f7;
   transform: 0.2s ease all;
 }
 .container .run {
@@ -47,24 +49,30 @@ body {
   border-style: none;
   background-color: #e2e7e7;
   border-radius: 2px;
-  box-shadow: 1px 4px 4px #f0f0f0, 4px 1px 4px #f0f0f0, 1px 4px 4px #f0f0f0, 4px 1px 4px #f0f0f0;
 }
 .container .run:hover {
   cursor: pointer;
-  background-color: #f5efef;
+  background-color: #f7f7f7;
   transform: 0.2s ease all;
 }
 
-.modal1 {
-  display: none;
+button:active {
+  position: relative;
+  top: 1px;
+}
+
+.site-menu {
   width: 320px;
   height: 100%;
   background-color: white;
-  position: absolute;
+  position: fixed;
+  z-index: 10;
+  transition: 0.25s ease-in;
+  transform: translateX(-320px);
   top: 0;
   align-items: center;
 }
-.modal1 p {
+.site-menu h2 {
   font-size: 18px;
   margin-bottom: 100px;
   margin-left: 70px;
@@ -72,7 +80,7 @@ body {
   position: absolute;
   top: 280px;
 }
-.modal1 button {
+.site-menu button {
   width: 90px;
   position: absolute;
   top: 310px;
@@ -84,49 +92,16 @@ body {
   border-style: none;
   background-color: #e2e7e7;
   border-radius: 2px;
-  box-shadow: 1px 4px 4px #f0f0f0, 4px 1px 4px #f0f0f0, 1px 4px 4px #f0f0f0, 4px 1px 4px #f0f0f0;
 }
-.modal1 button:hover {
+.site-menu button:hover {
   cursor: pointer;
-  background-color: #f5efef;
+  background-color: #f7f7f7;
   transform: 0.2s ease all;
 }
 
-.modal2 {
-  display: none;
-  width: 320px;
-  height: 100%;
-  background-color: white;
-  position: absolute;
-  top: 0;
-  align-items: center;
-}
-.modal2 p {
-  font-size: 18px;
-  margin-bottom: 100px;
-  margin-left: 90px;
-  font-family: Arial, Helvetica, sans-serif;
-  position: absolute;
-  top: 280px;
-}
-.modal2 button {
-  width: 70px;
-  position: absolute;
-  top: 310px;
-  left: 110px;
-  height: 35px;
-  margin: 10px;
-  font-size: 12px;
-  font-family: Arial, Helvetica, sans-serif;
-  border-style: none;
-  background-color: #e2e7e7;
-  border-radius: 2px;
-  box-shadow: 1px 4px 4px #f0f0f0, 4px 1px 4px #f0f0f0, 1px 4px 4px #f0f0f0, 4px 1px 4px #f0f0f0;
-}
-.modal2 button:hover {
-  cursor: pointer;
-  background-color: #f5efef;
-  transform: 0.2s ease all;
+.site-menu.show {
+  transform: translateX(0);
+  opacity: 1;
 }
 
 /*# sourceMappingURL=style.css.map */

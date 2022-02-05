@@ -6,6 +6,24 @@
 body{
     background-color: rgb(71, 113, 252);
 }
+
+.hide{
+    opacity: 0;
+}
+
+// .black-layer{
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     height: 100%;
+//     width: 100%;
+//     background-color: black;
+// }
+// .black-layer.show{
+//     opacity: 0.65;
+//     z-index: 1;
+// }
+
 .container{
     position: relative;
     display: flex;
@@ -18,10 +36,6 @@ body{
     background-color: white;
     border-radius: 3px;
     border: 1px solid white;
-    box-shadow: 1px 4px 8px rgb(141, 141, 235),
-                4px 1px 8px rgb(141, 141, 235),
-                1px 4px 8px rgb(141, 141, 235),
-                4px 1px 8px rgb(141, 141, 235);
     .search{
         width: 70px;
         height: 30px;
@@ -31,13 +45,9 @@ body{
         border-style: none;
         background-color: rgb(226, 231, 231);
         border-radius: 2px;
-        box-shadow: 1px 4px 4px rgb(240, 240, 240),
-                    4px 1px 4px rgb(240, 240, 240),
-                    1px 4px 4px rgb(240, 240, 240),
-                    4px 1px 4px rgb(240, 240, 240);
         &:hover{
             cursor: pointer;
-            background-color: rgb(245, 239, 239);
+            background-color: rgb(247, 247, 247);
             transform: .2s ease all;
         }
     }
@@ -50,27 +60,29 @@ body{
         border-style: none;
         background-color: rgb(226, 231, 231);
         border-radius: 2px;
-        box-shadow: 1px 4px 4px rgb(240, 240, 240),
-                    4px 1px 4px rgb(240, 240, 240),
-                    1px 4px 4px rgb(240, 240, 240),
-                    4px 1px 4px rgb(240, 240, 240);
         &:hover{
             cursor: pointer;
-            background-color: rgb(245, 239, 239);
+            background-color: rgb(247, 247, 247);
             transform: .2s ease all;
         }
     }
     
 }
-.modal1{
-    display: none;
+button:active{
+    position: relative;
+    top:1px;
+}
+.site-menu{
     width: 320px;
     height: 100%;
     background-color: white;
-    position: absolute;
+    position: fixed;
+    z-index: 10;
+    transition: .25s ease-in;
+    transform: translateX(-320px);
     top: 0;
     align-items: center;
-    p{
+    h2{
         font-size: 18px;
         margin-bottom: 100px;
         margin-left: 70px;
@@ -90,54 +102,51 @@ body{
         border-style: none;
         background-color: rgb(226, 231, 231);
         border-radius: 2px;
-        box-shadow: 1px 4px 4px rgb(240, 240, 240),
-                    4px 1px 4px rgb(240, 240, 240),
-                    1px 4px 4px rgb(240, 240, 240),
-                    4px 1px 4px rgb(240, 240, 240);
         &:hover{
             cursor: pointer;
-            background-color: rgb(245, 239, 239);
+            background-color: rgb(247, 247, 247);
             transform: .2s ease all;
         }
     }
 }
 
-.modal2{
-    display: none;
-    width: 320px;
-    height: 100%;
-    background-color: white;
-    position: absolute;
-    top: 0;
-    align-items: center;
-    p{
-        font-size: 18px;
-        margin-bottom: 100px;
-        margin-left: 90px;
-        font-family: Arial, Helvetica, sans-serif;
-        position: absolute;
-        top: 280px;
-    }
-    button{
-        width: 70px;
-        position: absolute;
-        top: 310px;
-        left: 110px;
-        height: 35px;
-        margin: 10px;
-        font-size: 12px;
-        font-family: Arial, Helvetica, sans-serif;
-        border-style: none;
-        background-color: rgb(226, 231, 231);
-        border-radius: 2px;
-        box-shadow: 1px 4px 4px rgb(240, 240, 240),
-                    4px 1px 4px rgb(240, 240, 240),
-                    1px 4px 4px rgb(240, 240, 240),
-                    4px 1px 4px rgb(240, 240, 240);
-        &:hover{
-            cursor: pointer;
-            background-color: rgb(245, 239, 239);
-            transform: .2s ease all;
-        }
-    }
+.site-menu.show{
+    transform: translateX(0);
+    opacity: 1;
 }
+
+// .modal2{
+//     display: none;
+//     width: 320px;
+//     height: 100%;
+//     background-color: white;
+//     position: absolute;
+//     top: 0;
+//     align-items: center;
+//     p{
+//         font-size: 18px;
+//         margin-bottom: 100px;
+//         margin-left: 90px;
+//         font-family: Arial, Helvetica, sans-serif;
+//         position: absolute;
+//         top: 280px;
+//     }
+//     button{
+//         width: 70px;
+//         position: absolute;
+//         top: 310px;
+//         left: 110px;
+//         height: 35px;
+//         margin: 10px;
+//         font-size: 12px;
+//         font-family: Arial, Helvetica, sans-serif;
+//         border-style: none;
+//         background-color: rgb(226, 231, 231);
+//         border-radius: 2px;
+//         &:hover{
+//             cursor: pointer;
+//             background-color: rgb(247, 247, 247);
+//             transform: .2s ease all;
+//         }
+//     }
+// }

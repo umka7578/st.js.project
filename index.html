@@ -9,19 +9,21 @@
 </head>
 <body>
     <div class="container">
-        <button class="search">Search</button>
-        <button class="run">Run</button>
+        <button class="btn search" data-btn-type="search">Search</button>
+        <button class="btn run" data-btn-type="run">Run</button>
     </div>
 
-    <div class="modal1">
-        <p>Whoa! You found me!</p>
-        <button class="ward">Hide back</button>
+    <div class="black-layer hide btn" data-btn-type="hide"></div>
+
+    <div class="site-menu hide">
+        <h2 class="menu-text"></h2>
+        <button class="btn" data-btn-type="hide"></button>
     </div>
 
-    <div class="modal2">
+    <!-- <div class="modal2">
         <p>Please don't run!</p>
         <button class="shut">close</button>
-    </div>
+    </div> -->
 
 
     <script src="./index.js"></script>
